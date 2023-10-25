@@ -1,0 +1,33 @@
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  nz-header {
+    background: #fff;
+    padding: 0;
+  }
+
+  nz-content {
+    margin: 0 16px;
+  }
+
+  nz-breadcrumb {
+    margin: 16px 0;
+  }
+
+  .inner-content {
+    padding: 24px;
+    background: #fff;
+    min-height: 360px;
+  }
+
+  nz-footer {
+    text-align: center;
+  }
+
+  .chatgpt-ng-list{
+    max-height: 70vh;  /* 设置为屏幕高度的90% */
+    overflow-y: auto; /* 当内容超出容器时，显示垂直滚动条 */
+  }

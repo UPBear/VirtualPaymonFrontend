@@ -1,0 +1,35 @@
+<nz-layout>
+    <nz-layout>
+      <nz-header>
+        ChatGPT测试
+      </nz-header>
+      <nz-content>
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>chatgpt</nz-breadcrumb-item>
+        </nz-breadcrumb>
+
+        <div class="chatgpt-ng-list" #scrollContainer>
+            <nz-list *ngIf="commitsDatas" [nzDataSource]="commitsDatas" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+                <ng-template #item let-item>
+                  <nz-comment [nzAuthor]="item.author" [nzDatetime]="item.datetime">
+                    <nz-avatar nz-comment-avatar nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                    <nz-comment-content>
+                      <p>{{ item.content }}</p>
+                    </nz-comment-content>
+                    <nz-comment-action>Reply to</nz-comment-action>
+                  </nz-comment>
+                </ng-template>
+              </nz-list>
+        </div>
+        
+
+        <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+            <input type="text" nz-input [formControl]="inputText" placeholder="请输入" (keydown.enter)="GetGptRes()"/>
+          </nz-input-group>
+          <ng-template #suffixButton>
+            <button nz-button nzType="primary" nzSize="large" nzSearch (click)="GetGptRes()">提交</button>
+          </ng-template>
+      </nz-content>
+      <nz-footer>测试ChatGPT聊天实验</nz-footer>
+    </nz-layout>
+  </nz-layout>
